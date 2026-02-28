@@ -119,20 +119,16 @@
 
      <script>
     function filterProjects(category) {
-        // 1. نشيل كلاس active من كل الزراير ونحطه على الزرار اللي اتداس بس
         const buttons = document.querySelectorAll('.portfolio-categories button');
         buttons.forEach(btn => btn.classList.remove('active'));
         event.target.classList.add('active');
 
-        // 2. نجيب كل الكروت
         const projects = document.querySelectorAll('.project-card');
         
-        // 3. نلف عليهم ونفلتر
         projects.forEach(project => {
             if (category === 'all') {
-                project.style.display = 'block'; // اظهر الكل
+                project.style.display = 'block';
             } else {
-                // لو الكارت واخد نفس اسم الكلاس بتاع الفلتر (زي cpp أو js)، اظهره، غير كده اخفيه
                 if (project.classList.contains(category)) {
                     project.style.display = 'block';
                 } else {
@@ -144,4 +140,5 @@
 </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
+
 </html>
